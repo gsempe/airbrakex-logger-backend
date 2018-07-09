@@ -1,18 +1,9 @@
 defmodule LoggerBackend do
-  @moduledoc """
-  Documentation for LoggerBackend.
-  """
+  use Application
 
-  @doc """
-  Hello world.
+  def start(_type, _args) do
 
-  ## Examples
-
-      iex> LoggerBackend.hello
-      :world
-
-  """
-  def hello do
-    :world
+    children = []
+    Supervisor.start_link(children, strategy: :one_for_one)
   end
 end

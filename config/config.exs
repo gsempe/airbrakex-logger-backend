@@ -21,6 +21,15 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
+config :airbrakex,
+       project_key: "e3c5052d68e60bcda824aae32cfe15ea",
+       project_id: 189288,
+       logger_level: :error,
+       environment: Mix.env
+config :logger,
+       metadata: [:module, :function, :line],
+       backends: [:console, Airbrakex.LoggerBackend]
+
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
 # by uncommenting the line below and defining dev.exs, test.exs and such.
